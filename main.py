@@ -277,7 +277,7 @@ def print_floor_function():
     print()
 
     
-    x = np.arange(-3.0, 3.1, 0.1)
+    x = np.arange(-4.0, 4.0, 0.1)
     y = []
 
     for i in range(len(x)):
@@ -287,7 +287,7 @@ def print_floor_function():
     
     plt.xlabel('x axis')
     plt.ylabel('y axis')
-    plt.axis((-3,3,-3,3))
+    plt.axis((-4, 4, -4, 4))
 
     plt.grid(color = "gray", alpha=.5, linestyle='--')
 
@@ -302,7 +302,7 @@ def print_banner():
 파이썬으로 함수 표현하기
 =====================================================
 
-v1.0.1
+v1.1.0
 Made by TaeHwan
 '''
     print(txt)
