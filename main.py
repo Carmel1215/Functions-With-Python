@@ -73,7 +73,7 @@ def Main():
                 print_floor_function_menu()
 
                 try:
-                    floor_user_input = int(input('무엇을 하시곘습니까? : '))
+                    floor_user_input = int(input('무엇을 하시겠습니까? : '))
                 except ValueError:
                     wrong_input()
                     continue
