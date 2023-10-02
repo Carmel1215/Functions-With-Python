@@ -93,24 +93,24 @@ def Main():
 def print_linear_function_menu():
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('일차함수 메뉴')
     print('=====================================================')
-    print('')
+    print()
     print('[0] 뒤로가기')
     print('[1] 일차함수 식 구하기')
     print('[2] 일차함수 그리기')
-    print('')
+    print()
 
 def print_get_linear_equation_menu():
     
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('일차함수 식 구하기')
     print('=====================================================')
-    print('')
+    print()
 
 def get_linear_equation():
     
@@ -148,17 +148,17 @@ def get_linear_equation():
     print_get_linear_equation_menu()
 
     print('일차함수의 식은 : ' + 'y = {0}x {1}'.format(delete_point(a), add_sign(b)))
-    print('')
+    print()
     pause()
 
 def print_linear_function():
     
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('일차함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     try:
         a = float(input('그리고자 하는 일차함수의 기울기를 입력해주세요 : '))
@@ -166,11 +166,11 @@ def print_linear_function():
         wrong_input()
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('일차함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     try:
         b = float(input('그리고자 하는 일차함수의 상수항을 입력해주세요 : '))
@@ -194,23 +194,23 @@ def print_linear_function():
 def print_quadratic_function_menu():
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('이차함수 메뉴')
     print('=====================================================')
-    print('')
+    print()
     print('[0] 뒤로가기')
     print('[1] 이차함수 그리기')
-    print('')
+    print()
 
 def print_quadratic_function():
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('이차함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     try:
         a = float(input('그리고자 하는 이차함수의 이차항의 계수를 입력해주세요 : '))
@@ -218,11 +218,11 @@ def print_quadratic_function():
         wrong_input()
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('이차함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     try:
         b = float(input('그리고자 하는 이차함수의 일차항의 계수를 입력해주세요 : '))
@@ -230,11 +230,11 @@ def print_quadratic_function():
         wrong_input()
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('이차함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     try:
         c = float(input('그리고자 하는 이차함수의 상수항을 입력해주세요 : '))
@@ -258,23 +258,23 @@ def print_quadratic_function():
 def print_floor_function_menu():
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('가우스 함수 메뉴')
     print('=====================================================')
-    print('')
+    print()
     print('[0] 뒤로가기')
     print('[1] 가우스 함수 그리기')
-    print('')
+    print()
 
 def print_floor_function():
 
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('가우스 함수 그리기')
     print('=====================================================')
-    print('')
+    print()
 
     
     x = np.arange(-3.0, 3.1, 0.1)
@@ -302,7 +302,7 @@ def print_banner():
 파이썬으로 함수 표현하기
 =====================================================
 
-v1.0.0
+v1.0.1
 Made by TaeHwan
 '''
     print(txt)
@@ -310,16 +310,16 @@ Made by TaeHwan
 def print_menu():
     
     clear()
-    print('')
+    print()
     print('=====================================================')
     print('메인 메뉴')
     print('=====================================================')
-    print('')
+    print()
     print('[0] 프로그램 종료')
     print('[1] 일차함수')
     print('[2] 이차함수')
     print('[3] 가우스 함수')
-    print('')
+    print()
 
 # 편의성 메소드
 def clear():
@@ -330,12 +330,12 @@ def pause():
 
 def wrong_input():
     clear()
-    print('')
+    print()
     print('잘못된 입력입니다. 다시 입력해주세요.')
-    print('')
+    print()
     pause()
 
-def delete_point(num):
+def delete_point(num) -> int:
     del_num = num
 
     if math.floor(num) == num:
@@ -343,7 +343,7 @@ def delete_point(num):
 
     return del_num
 
-def add_sign(num):
+def add_sign(num) -> str:
     num = delete_point(num)
 
     if num >= 0:
