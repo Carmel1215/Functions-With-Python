@@ -36,6 +36,7 @@ def Main():
                     linear_user_input = int(input('무엇을 하시겠습니까? : '))
                 except ValueError:
                     wrong_input()
+                    continue
 
                 if linear_user_input == 0:
                     break
@@ -45,6 +46,7 @@ def Main():
                     print_linear_function()
                 else:
                     wrong_input()
+                    continue
 
         elif main_user_input == 2: # 이차함수
 
@@ -55,6 +57,7 @@ def Main():
                     quadratic_user_input = int(input('무엇을 하시겠습니까? : '))
                 except ValueError:
                     wrong_input()
+                    continue
 
                 if quadratic_user_input == 0:
                     break
@@ -62,6 +65,7 @@ def Main():
                     print_quadratic_function()
                 else:
                     wrong_input()
+                    continue
 
         elif main_user_input == 3: # 가우스 함수
             
@@ -72,6 +76,7 @@ def Main():
                     floor_user_input = int(input('무엇을 하시곘습니까? : '))
                 except ValueError:
                     wrong_input()
+                    continue
 
                 if floor_user_input == 0:
                     break
@@ -79,6 +84,7 @@ def Main():
                     print_floor_function()
                 else:
                     wrong_input()
+                    continue
 
         else:
             wrong_input()
@@ -167,7 +173,7 @@ def print_linear_function():
     print('')
 
     try:
-        b = float(input('그리고자 하는 일차함수의 Y절편을 입력해주세요 : '))
+        b = float(input('그리고자 하는 일차함수의 상수항을 입력해주세요 : '))
     except ValueError:
         wrong_input()
 
@@ -198,7 +204,55 @@ def print_quadratic_function_menu():
     print('')
 
 def print_quadratic_function():
-    pass
+
+    clear()
+    print('')
+    print('=====================================================')
+    print('이차함수 그리기')
+    print('=====================================================')
+    print('')
+
+    try:
+        a = float(input('그리고자 하는 이차함수의 이차항의 계수를 입력해주세요 : '))
+    except ValueError:
+        wrong_input()
+
+    clear()
+    print('')
+    print('=====================================================')
+    print('이차함수 그리기')
+    print('=====================================================')
+    print('')
+
+    try:
+        b = float(input('그리고자 하는 이차함수의 일차항의 계수를 입력해주세요 : '))
+    except ValueError:
+        wrong_input()
+
+    clear()
+    print('')
+    print('=====================================================')
+    print('이차함수 그리기')
+    print('=====================================================')
+    print('')
+
+    try:
+        c = float(input('그리고자 하는 이차함수의 상수항을 입력해주세요 : '))
+    except ValueError:
+        wrong_input()
+
+    # 그래프 출력
+    x = np.arange(-10, 10.01, 0.01)
+
+    plt.xlabel('x axis')
+    plt.ylabel('y axis')
+    plt.axis((-10,10,-10,10))
+
+    plt.grid(color = "gray", alpha=.5, linestyle='--')
+
+    plt.plot(x, a*(x**2) + b*x + c)
+
+    plt.show()
 
 # 가우스 함수 메소드
 def print_floor_function_menu():
