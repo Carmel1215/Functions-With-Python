@@ -161,7 +161,7 @@ def print_linear_function():
     print()
 
     try:
-        a = float(input('그리고자 하는 일차함수의 기울기를 입력해주세요 : '))
+        a = float(input('그리고자 하는 일차함수의 일차항의 계수를 입력해주세요 : '))
     except ValueError:
         wrong_input()
 
@@ -178,11 +178,11 @@ def print_linear_function():
         wrong_input()
 
     # 그래프 출력
-    x = np.array(range(-15,16))
+    x = np.arange(-40, 40, 0.01)
 
     plt.xlabel('x axis')
     plt.ylabel('y axis')
-    plt.axis((-10,10,-10,10))
+    plt.axis((-20,20,-20,20))
 
     plt.grid(color = "gray", alpha=.5, linestyle='--')
 
@@ -242,11 +242,11 @@ def print_quadratic_function():
         wrong_input()
 
     # 그래프 출력
-    x = np.arange(-10, 10.01, 0.01)
+    x = np.arange(-40, 40, 0.01)
 
     plt.xlabel('x axis')
     plt.ylabel('y axis')
-    plt.axis((-10,10,-10,10))
+    plt.axis((-20,20,-20,20))
 
     plt.grid(color = "gray", alpha=.5, linestyle='--')
 
@@ -284,7 +284,6 @@ def print_floor_function():
         y.append(math.floor(x[i]))
 
     # 그래프 출력
-    
     plt.xlabel('x axis')
     plt.ylabel('y axis')
     plt.axis((-4, 4, -4, 4))
@@ -302,7 +301,7 @@ def print_banner():
 파이썬으로 함수 표현하기
 =====================================================
 
-v1.1.0
+v1.2.0
 Made by TaeHwan
 '''
     print(txt)
