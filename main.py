@@ -39,12 +39,16 @@ def Main():
                     continue
 
                 if linear_user_input == 0:
+                    linear_user_input = None
                     break
                 elif linear_user_input == 1:
+                    linear_user_input = None
                     get_linear_equation()
                 elif linear_user_input == 2:
+                    linear_user_input = None
                     print_linear_function()
                 else:
+                    linear_user_input = None
                     wrong_input()
                     continue
 
@@ -60,10 +64,13 @@ def Main():
                     continue
 
                 if quadratic_user_input == 0:
+                    quadratic_user_input = None
                     break
                 elif quadratic_user_input == 1:
+                    quadratic_user_input = None
                     print_quadratic_function()
                 else:
+                    quadratic_user_input = None
                     wrong_input()
                     continue
 
@@ -79,15 +86,19 @@ def Main():
                     continue
 
                 if floor_user_input == 0:
+                    floor_user_input = None
                     break
                 elif floor_user_input == 1:
+                    floor_user_input = None
                     print_floor_function()
                 else:
+                    floor_user_input = None
                     wrong_input()
                     continue
 
         else:
             wrong_input()
+            main_user_input = None
 
 # 일차함수 관련 메소드
 def print_linear_function_menu():
@@ -120,6 +131,7 @@ def get_linear_equation():
         first_x = float(input('첫 번째 점의 X 좌표를 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        get_linear_equation()
 
     print_get_linear_equation_menu()
 
@@ -127,6 +139,7 @@ def get_linear_equation():
         first_y = float(input('첫 번째 점의 Y 좌표를 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        get_linear_equation()
 
     print_get_linear_equation_menu()
 
@@ -134,6 +147,7 @@ def get_linear_equation():
         second_x = float(input('두 번째 점의 X 좌표를 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        get_linear_equation()
 
     print_get_linear_equation_menu()
 
@@ -141,6 +155,7 @@ def get_linear_equation():
         second_y = float(input('두 번째 점의 Y 좌표를 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        get_linear_equation()
         
     a = (first_y - second_y) / (first_x - second_x)
     b = first_y - (a * first_x)
@@ -164,6 +179,7 @@ def print_linear_function():
         a = float(input('그리고자 하는 일차함수의 일차항의 계수를 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        print_linear_function()
 
     clear()
     print()
@@ -176,6 +192,7 @@ def print_linear_function():
         b = float(input('그리고자 하는 일차함수의 상수항을 입력해주세요 : '))
     except ValueError:
         wrong_input()
+        print_linear_function()
 
     # 그래프 출력
     x = np.arange(-40, 40, 0.01)
@@ -301,7 +318,7 @@ def print_banner():
 파이썬으로 함수 표현하기
 =====================================================
 
-v1.2.0
+v1.2.1
 Made by TaeHwan
 '''
     print(txt)
