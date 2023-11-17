@@ -1,8 +1,8 @@
 # import
-import os
-import math
-import matplotlib.pyplot as plt
-import numpy as np
+from utility import *
+from linear_function import *
+from quadratic_function import *
+from floor_function import *
 
 # 메인 메소드
 def Main():
@@ -69,6 +69,9 @@ def Main():
                 elif quadratic_user_input == 1:
                     quadratic_user_input = None
                     print_quadratic_function()
+                elif quadratic_user_input == 2:
+                    quadratic_user_input = None
+                    get_quadratic_equation()
                 else:
                     quadratic_user_input = None
                     wrong_input()
@@ -100,217 +103,6 @@ def Main():
             wrong_input()
             main_user_input = None
 
-# 일차함수 관련 메소드
-def print_linear_function_menu():
-
-    clear()
-    print()
-    print('=====================================================')
-    print('일차함수 메뉴')
-    print('=====================================================')
-    print()
-    print('[0] 뒤로가기')
-    print('[1] 일차함수 식 구하기')
-    print('[2] 일차함수 그리기')
-    print()
-
-def print_get_linear_equation_menu():
-    
-    clear()
-    print()
-    print('=====================================================')
-    print('일차함수 식 구하기')
-    print('=====================================================')
-    print()
-
-def get_linear_equation():
-    
-    print_get_linear_equation_menu()
-
-    try:
-        first_x = float(input('첫 번째 점의 X 좌표를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        get_linear_equation()
-
-    print_get_linear_equation_menu()
-
-    try:
-        first_y = float(input('첫 번째 점의 Y 좌표를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        get_linear_equation()
-
-    print_get_linear_equation_menu()
-
-    try:
-        second_x = float(input('두 번째 점의 X 좌표를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        get_linear_equation()
-
-    print_get_linear_equation_menu()
-
-    try:
-        second_y = float(input('두 번째 점의 Y 좌표를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        get_linear_equation()
-        
-    a = (first_y - second_y) / (first_x - second_x)
-    b = first_y - (a * first_x)
-
-    print_get_linear_equation_menu()
-
-    print('일차함수의 식은 : ' + 'y = {0}x {1}'.format(delete_point(a), add_sign(b)))
-    print()
-    pause()
-
-def print_linear_function():
-    
-    clear()
-    print()
-    print('=====================================================')
-    print('일차함수 그리기')
-    print('=====================================================')
-    print()
-
-    try:
-        a = float(input('그리고자 하는 일차함수의 일차항의 계수를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        print_linear_function()
-
-    clear()
-    print()
-    print('=====================================================')
-    print('일차함수 그리기')
-    print('=====================================================')
-    print()
-
-    try:
-        b = float(input('그리고자 하는 일차함수의 상수항을 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-        print_linear_function()
-
-    # 그래프 출력
-    x = np.arange(-40, 40, 0.01)
-
-    plt.xlabel('x axis')
-    plt.ylabel('y axis')
-    plt.axis((-20,20,-20,20))
-
-    plt.grid(color = "gray", alpha=.5, linestyle='--')
-
-    plt.plot(x, a*x + b)
-
-    plt.show()
-
-# 이차함수 관련 메소드
-def print_quadratic_function_menu():
-
-    clear()
-    print()
-    print('=====================================================')
-    print('이차함수 메뉴')
-    print('=====================================================')
-    print()
-    print('[0] 뒤로가기')
-    print('[1] 이차함수 그리기')
-    print()
-
-def print_quadratic_function():
-
-    clear()
-    print()
-    print('=====================================================')
-    print('이차함수 그리기')
-    print('=====================================================')
-    print()
-
-    try:
-        a = float(input('그리고자 하는 이차함수의 이차항의 계수를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-
-    clear()
-    print()
-    print('=====================================================')
-    print('이차함수 그리기')
-    print('=====================================================')
-    print()
-
-    try:
-        b = float(input('그리고자 하는 이차함수의 일차항의 계수를 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-
-    clear()
-    print()
-    print('=====================================================')
-    print('이차함수 그리기')
-    print('=====================================================')
-    print()
-
-    try:
-        c = float(input('그리고자 하는 이차함수의 상수항을 입력해주세요 : '))
-    except ValueError:
-        wrong_input()
-
-    # 그래프 출력
-    x = np.arange(-40, 40, 0.01)
-
-    plt.xlabel('x axis')
-    plt.ylabel('y axis')
-    plt.axis((-20,20,-20,20))
-
-    plt.grid(color = "gray", alpha=.5, linestyle='--')
-
-    plt.plot(x, a*(x**2) + b*x + c)
-
-    plt.show()
-
-# 가우스 함수 메소드
-def print_floor_function_menu():
-
-    clear()
-    print()
-    print('=====================================================')
-    print('가우스 함수 메뉴')
-    print('=====================================================')
-    print()
-    print('[0] 뒤로가기')
-    print('[1] 가우스 함수 그리기')
-    print()
-
-def print_floor_function():
-
-    clear()
-    print()
-    print('=====================================================')
-    print('가우스 함수 그리기')
-    print('=====================================================')
-    print()
-
-    
-    x = np.arange(-4.0, 4.0, 0.1)
-    y = []
-
-    for i in range(len(x)):
-        y.append(math.floor(x[i]))
-
-    # 그래프 출력
-    plt.xlabel('x axis')
-    plt.ylabel('y axis')
-    plt.axis((-4, 4, -4, 4))
-
-    plt.grid(color = "gray", alpha=.5, linestyle='--')
-
-    plt.plot(x, y, '.')
-
-    plt.show()
-
 # 출력 메소드
 def print_banner():
     txt = '''
@@ -336,37 +128,5 @@ def print_menu():
     print('[2] 이차함수')
     print('[3] 가우스 함수')
     print()
-
-# 편의성 메소드
-def clear():
-    os.system('cls')
-
-def pause():
-    os.system('pause')
-
-def wrong_input():
-    clear()
-    print()
-    print('잘못된 입력입니다. 다시 입력해주세요.')
-    print()
-    pause()
-
-def delete_point(num) -> int:
-    del_num = num
-
-    if math.floor(num) == num:
-        del_num = math.floor(num)
-
-    return del_num
-
-def add_sign(num) -> str:
-    num = delete_point(num)
-
-    if num >= 0:
-        num = str('+ {0}'.format(num))
-        return num
-    elif num < 0:
-        num = str('- {0}'.format(num))
-        return num
 
 Main() # Run Main Method
